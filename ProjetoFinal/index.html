@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filmes Assistidos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="main-screen" class="screen">
+    <h1 class="page-title">FILMES ASSISTIDOS</h1>
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Pesquise o nome do filme" oninput="searchMovie()" />
+      <button onclick="searchMovie()">
+        <span class="icon">🔍</span>
+      </button>
+    </div>
+    <button class="add-button" onclick="showCadastro()">➕</button>
+    <div id="movies-container" class="movies-grid"></div>
+  </div>
+
+  <div id="cadastro-screen" class="screen hidden">
+    <h1 class="page-title">CADASTRO DE FILMES</h1>
+    <button class="back-button" onclick="showMain()">⬅️</button>
+    <form id="cadastro-form">
+      <div class="form-group">
+        <label>Título</label><input type="text" id="titulo" required />
+        <label>Duração (min)</label><input type="text" id="duracao" required />
+      </div>
+      <div class="form-group">
+        <label>Diretor</label><input type="text" id="diretor" />
+        <label>Elenco</label><input type="text" id="elenco" />
+      </div>
+      <div class="form-group">
+        <label>Ano Lançamento</label><input type="text" id="ano" required />
+        <label>Classificação</label><input type="text" id="classificacao" />
+      </div>
+      <div class="form-group">
+        <label>Gênero</label><input type="text" id="genero" />
+        <label>Nota</label><input type="text" id="nota" />
+      </div>
+      <div class="form-group">
+        <label>URL da Imagem</label><input type="text" id="imagem" />
+      </div>
+      <div class="form-group">
+        <label>Sinopse</label><textarea id="sinopse"></textarea>
+      </div>
+      <button type="submit" class="submit-button">Cadastrar</button>
+    </form>
+  </div>
+
+  <div id="atualizar-screen" class="screen hidden">
+    <h1 class="page-title">ATUALIZAR FILMES</h1>
+    <button class="back-button" onclick="showMain()">⬅️</button>
+    <form id="atualizar-form">
+      <div class="form-group">
+        <label>Título</label><input type="text" id="edit-titulo" required />
+        <label>Duração (min)</label><input type="text" id="edit-duracao" required />
+      </div>
+      <div class="form-group">
+        <label>Diretor</label><input type="text" id="edit-diretor" />
+        <label>Elenco</label><input type="text" id="edit-elenco" />
+      </div>
+      <div class="form-group">
+        <label>Ano Lançamento</label><input type="text" id="edit-ano" required />
+        <label>Classificação</label><input type="text" id="edit-classificacao" />
+      </div>
+      <div class="form-group">
+        <label>Gênero</label><input type="text" id="edit-genero" />
+        <label>Nota</label><input type="text" id="edit-nota" />
+      </div>
+      <div class="form-group">
+        <label>URL da Imagem</label><input type="text" id="edit-imagem" />
+      </div>
+      <div class="form-group">
+        <label>Sinopse</label><textarea id="edit-sinopse"></textarea>
+      </div>
+      <button type="submit" class="submit-button">Atualizar</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
